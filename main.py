@@ -48,12 +48,7 @@ def wait(chat_id, user_text):
 
 
 def choose(chat_id):
-    bot.send_message(chat_id, 'Время вышло')
-
-
-def main():
-    bot.reply_on_message(wait)
-    bot.run_bot()
+    bot.send_message(chat_id, 'Время вышло')   
 
 
 if __name__ == '__main__':
@@ -61,4 +56,5 @@ if __name__ == '__main__':
     tg_token = os.environ['TELEGRAM_TOKEN']
     tg_chat_id = os.environ['TG_CHAT_ID']
     bot = ptbot.Bot(tg_token)
-    main()
+    bot.reply_on_message(wait)
+    bot.run_bot()
